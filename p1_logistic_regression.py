@@ -11,6 +11,7 @@ Y = df["Survived"].values
 
 model = LogisticRegression()
 model.fit(X, Y)
+print(model.score(X, Y))
 
 lineX = np.linspace(0, 100, 100)
 lineY = -(model.coef_[0, 0]*lineX + model.intercept_)/model.coef_[0, 1]
@@ -18,7 +19,7 @@ lineY = -(model.coef_[0, 0]*lineX + model.intercept_)/model.coef_[0, 1]
 plt.scatter(df["Age"], df["Fare"], c=df["Survived"])
 plt.plot(lineX, lineY, c="red")
 
-plt.title("0 = (" + str(model.coef_[0, 0]) + ")*x + (" + str(model.coef_[0, 1]) + ")*y + (" + str(model.intercept_) + ");")
+plt.title("0=(" + str(model.coef_[0, 0]) + ")*X+(" + str(model.coef_[0, 1]) + ")*Y+(" + str(model.intercept_[0]) + ")")
 
 plt.xlabel("Age")
 plt.ylabel("Fare")
