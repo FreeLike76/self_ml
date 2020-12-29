@@ -13,6 +13,6 @@ param_grid = {
     "max_leaf_nodes": [10, 20, 35, 50]}
 dt = DecisionTreeClassifier()
 gs = GridSearchCV(dt, param_grid, scoring="f1", cv=5)
-gs.fit(X,y)
+gs.fit(X, y)
 print("Best:", gs.best_params_)
 print("Score:", gs.best_score_)
